@@ -1,8 +1,33 @@
-/.settings
-/target/
 *.iws
-*.log
-*.zip
-plugin.xml
+*Db.properties
+*Db.script
+stacktrace.log
+/*.zip
+/plugin.xml
+/*.log
+/*DB.*
+/cobertura.ser
+/target/
+/out/
+/web-app/plugins
+/web-app/WEB-INF/classes
+/.link_to_grails_plugins/
+/target-eclipse/
+grailsw
+grailsw.bat
+/wrapper/
+/data/
+/bin
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
 .DS_Store
-/web-app/

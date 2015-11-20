@@ -22,11 +22,13 @@ class HibernateFilterDomainConfiguration extends GrailsAnnotationConfiguration {
 		}
 
 		super.secondPassCompile()
-
+		def closureFilter = grailsApplication.config.filter?.default
 		for (domainClass in grailsApplication.domainClasses) {
 			def filters = domainClass.getPropertyValue('hibernateFilters')
 			if (filters instanceof Closure) {
 				new HibernateFilterBuilder(this, domainClass)
+			}else if(closureFilter){
+				new HibernateFilterBuilder(this, domainClass, closureFilter)
 			}
 		}
 

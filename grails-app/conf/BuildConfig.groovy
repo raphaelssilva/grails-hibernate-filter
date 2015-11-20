@@ -3,18 +3,25 @@ grails.project.source.level = 1.6
 
 grails.project.dependency.resolution = {
 
-	inherits 'global'
-	log 'warn'
+    inherits 'global'
+    log 'warn'
 
-	repositories {
-		grailsCentral()
-	}
+    repositories {
+        grailsPlugins()
+        grailsHome()
+        grailsCentral()
 
-	dependencies {}
+        mavenLocal()
+        mavenCentral()
+    }
 
-	plugins {
-		build(':release:2.0.3', ':rest-client-builder:1.0.2') {
-			export = false
-		}
-	}
+    dependencies {}
+
+    plugins {
+        build(":release:3.1.1", ":rest-client-builder:2.1.1") {
+            export = false
+        }
+        compile(":hibernate4:4.3.10")
+
+    }
 }

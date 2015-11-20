@@ -21,12 +21,12 @@ class HibernateFilterBuilder {
 	HibernateFilterDomainConfiguration configuration
 	GrailsDomainClass domainClass
 
-	HibernateFilterBuilder(HibernateFilterDomainConfiguration configuration, GrailsDomainClass domainClass) {
+	HibernateFilterBuilder(HibernateFilterDomainConfiguration configuration, GrailsDomainClass domainClass, def closureFilter=null) {
 		this.configuration = configuration
 		this.domainClass = domainClass
 		mappings = configuration.createMappings()
 
-		Closure filtersClosure = domainClass.getPropertyValue('hibernateFilters')
+		Closure filtersClosure = closureFilter?:domainClass.getPropertyValue('hibernateFilters')
 		filtersClosure.delegate = this
 		filtersClosure.resolveStrategy = Closure.DELEGATE_ONLY
 		filtersClosure()

@@ -4,15 +4,15 @@ import org.grails.plugin.hibernate.filter.DefaultHibernateFiltersHolder
 import org.grails.plugin.hibernate.filter.HibernateFilterUtils
 
 class HibernateFilterGrailsPlugin {
-	def version = '0.3.2'
+	def version = '2.0.0-SNAPSHOT'
 	def grailsVersion = '1.3 > *'
-	def loadAfter = ['controllers', 'hibernate']
+	def loadAfter = ['controllers', 'hibernate4']
 	def observe = ['*']
 	def pluginExcludes = ['grails-app/domain/**']
 
 	def author = 'Scott Burch'
 	def authorEmail = 'scott@bulldoginfo.com'
-	def title = 'Hibernate Filter plugin'
+	def title = 'Sagui Hibernate Filter plugin'
 	def description = 'Integrates Hibernate filtering into Grails'
 	def documentation = 'http://grails.org/plugin/hibernate-filter'
 
