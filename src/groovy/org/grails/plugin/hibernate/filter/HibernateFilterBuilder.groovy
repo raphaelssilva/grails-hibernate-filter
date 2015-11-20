@@ -29,7 +29,7 @@ class HibernateFilterBuilder {
 		Closure filtersClosure = closureFilter?:domainClass.getPropertyValue('hibernateFilters')
 		filtersClosure.delegate = this
 		filtersClosure.resolveStrategy = Closure.DELEGATE_ONLY
-		filtersClosure()
+		filtersClosure(domainClass.clazz)
 	}
 
 	def methodMissing(String name, args) {
